@@ -1,4 +1,4 @@
-export default class lanimate {
+export default class Lanimate {
     init() {
         const ready = new Promise(resolve => {
             if (document.readyState !== 'loading') {
@@ -196,4 +196,4 @@ export default class lanimate {
     }
 }
 
-window.lanimate = lanimate;
+window.Lanimate = Lanimate;

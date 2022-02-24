@@ -11,7 +11,7 @@ npm install lanimate
 ```
 
 ```js
-import lanimate from 'lanimate';
+import Lanimate from 'lanimate';
 ```
 
 or as a ready-to-go bundle:
@@ -23,6 +23,6 @@ or as a ready-to-go bundle:
 ## usage
 
 ```js
-const l = new lanimate();
-l.init();
+const lanimate = new Lanimate();
+lanimate.init();
 ```
