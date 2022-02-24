@@ -23,6 +23,6 @@ or as a ready-to-go bundle:
 ## usage
 
 ```js
-const lanimate = new lanimate();
-lanimate.init();
+const l = new lanimate();
+l.init();
 ```

@@ -22,7 +22,7 @@ export default class lanimate {
             }
         });
         load.then(() => {
-            load();
+            this.load();
         });
     }
     ready() {
