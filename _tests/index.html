@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
+        <title>.</title>
+        <script src="../lanimate.min.js"></script>
+        <script>new lanimate();</script>
+        <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .box {
+            width: 100%;
+            padding: 250px 0;
+            text-align: center;
+            background-color: red;
+        }
+        .box:nth-child(odd) {
+            background-color: blue;
+        }
+        h2 {
+            font-size: 100px;
+            color: #fff;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="box"><h2 data-lanimate="fade">Test</h2></div>
+        <div class="box"><h2 data-lanimate="fade">Test</h2></div>
+        <div class="box">
+            <h2 data-lanimate="fade">Test</h2>
+            <h2 data-lanimate="fade" data-lanimate-delay="500">Test2</h2>
+            <h2 data-lanimate="scrollX" data-lanimate-delay="1000">Test</h2>
+            <h2 data-lanimate="scrollY" data-lanimate-speed="3000" data-lanimate-delay="1500">Test</h2>
+            <h2 data-lanimate="scale" data-lanimate-delay="1500">Test</h2>
+        </div>
+        <div class="box">
+            <h2 data-lanimate="fade" data-lanimate-split="char">Char: Dies ist<br/>ein <strong>Test der <i>rockt</i></strong></h2>
+            <h2 data-lanimate="scrollY" data-lanimate-delay="500" data-lanimate-split="char">Char: Dies ist<br/>ein <strong>Test</strong></h2>
+            <h2 data-lanimate="scrollY" data-lanimate-delay="1000" data-lanimate-split="word">Word: Dies ist<br/>ein <strong>Test</strong></h2>
+            <h2 data-lanimate="scrollY" data-lanimate-delay="1500" data-lanimate-split="line">Dies ist<br/>ein <strong>Test</strong></h2>
+            <h2 data-lanimate="rotate" data-lanimate-split="word" data-lanimate-speed="1000">Dies ist<br/>ein <strong>Test</strong></h2>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+{
+    "name": "lanimate",
+    "version": "1.0.0",
+    "main": "_build/script.js",
+    "files": [
+        "_build/*.js",
+        "lanimate.min.js"
+    ],
+    "repository": "git@github.com:vielhuber/lanimate.git",
+    "author": "David Vielhuber <david@vielhuber.de>",
+    "license": "MIT",
+    "description": "",
+    "scripts": {
+        "js:browserify": "browserify ./_js/script.js --outfile ./lanimate.min.js --debug --transform babelify",
+        "js:minify": "terser --compress --mangle --output ./lanimate.min.js ./lanimate.min.js",
+        "js:babel": "npx babel ./_js/ --out-dir ./_build/",
+        "js": "npm-run-all --sequential js:browserify js:minify js:babel",
+        "js:dev": "npm-run-all --sequential js:browserify js:babel",
+        "watch:js": "onchange ./_js/*.js --initial --poll 50 --delay 0 --await-write-finish 50 -- npm run js:dev",
+        "dev": "npm-run-all --parallel watch:*",
+        "prod": "npm-run-all --parallel js"
+    },
+    "dependencies": {
+        "@babel/runtime": "^7.16.7",
+        "mdn-polyfills": "^5.20.0",
+        "onchange": "^7.1.0"
+    },
+    "devDependencies": {
+        "auto-changelog": "^2.3.0",
+        "@babel/cli": "^7.16.8",
+        "@babel/core": "^7.16.12",
+        "@babel/plugin-proposal-class-properties": "^7.16.7",
+        "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+        "@babel/plugin-transform-runtime": "^7.16.10",
+        "@babel/polyfill": "^7.11.5",
+        "@babel/preset-env": "^7.16.11",
+        "babelify": "^10.0.0",
+        "browserify": "^17.0.0",
+        "npm-run-all": "^4.1.5",
+        "terser": "^5.10.0"
+    },
+    "browserslist": [
+        "ie >= 11",
+        "> 0.25%",
+        "not dead"
+    ]
+}

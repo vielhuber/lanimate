@@ -1,0 +1,15 @@
+/_public/*
+!/_public/.gitkeep
+/_build/
+/node_modules/
+/vendor/
+/logs/
+/usage/
+/_vue/_build/
+/_js/_build/
+/_tests/_build/
+__image_snapshots__
+/.env
+*.css.map
+*.js.map
+*.tmp-browserify*
