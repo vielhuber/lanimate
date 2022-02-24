@@ -1,10 +1,28 @@
 export default class lanimate {
-    constructor() {
-        document.addEventListener('DOMContentLoaded', () => {
+    init() {
+        const ready = new Promise(resolve => {
+            if (document.readyState !== 'loading') {
+                return resolve();
+            } else {
+                document.addEventListener('DOMContentLoaded', () => {
+                    return resolve();
+                });
+            }
+        });
+        ready.then(() => {
             this.ready();
         });
-        window.addEventListener('load', () => {
-            this.load();
+        const load = new Promise(resolve => {
+            if (document.readyState === 'complete') {
+                return resolve();
+            } else {
+                window.addEventListener('load', () => {
+                    return resolve();
+                });
+            }
+        });
+        load.then(() => {
+            load();
         });
     }
     ready() {

@@ -23,5 +23,6 @@ or as a ready-to-go bundle:
 ## usage
 
 ```js
-new lanimate();
+const lanimate = new lanimate();
+lanimate.init();
 ```
