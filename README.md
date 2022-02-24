@@ -14,7 +14,7 @@ npm install lanimate
 import lanimate from 'lanimate';
 ```
 
-or include it the traditional way:
+or as a ready-to-go bundle:
 
 ```html
 <script src="lanimate.min.js"></script>
