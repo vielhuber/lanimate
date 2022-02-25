@@ -26,3 +26,14 @@ or as a ready-to-go bundle:
 const lanimate = new Lanimate();
 lanimate.init();
 ```
+
+```html
+<h2
+    data-lanimate="fade|scrollX|scrollY|scale|rotate"
+    data-lanimate-speed="3000"
+    data-lanimate-delay="1500"
+    data-lanimate-split="char|word|line"
+>
+    Title
+</h2>
+```
