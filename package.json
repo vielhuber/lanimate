@@ -1,6 +1,6 @@
 {
     "name": "lanimate",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "main": "_build/script.js",
     "files": [
         "_build/*.js",
@@ -22,11 +22,11 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.16.7",
+        "hlp": "^3.2.1",
         "mdn-polyfills": "^5.20.0",
         "onchange": "^7.1.0"
     },
     "devDependencies": {
-        "auto-changelog": "^2.3.0",
         "@babel/cli": "^7.16.8",
         "@babel/core": "^7.16.12",
         "@babel/plugin-proposal-class-properties": "^7.16.7",
@@ -34,6 +34,7 @@
         "@babel/plugin-transform-runtime": "^7.16.10",
         "@babel/polyfill": "^7.11.5",
         "@babel/preset-env": "^7.16.11",
+        "auto-changelog": "^2.3.0",
         "babelify": "^10.0.0",
         "browserify": "^17.0.0",
         "npm-run-all": "^4.1.5",
