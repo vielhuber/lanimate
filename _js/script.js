@@ -17,7 +17,7 @@ export default class Lanimate {
             if ($el.parentNode.closest('[data-lanimate]') !== null) {
                 return;
             }
-            if ($el.hasAttribute('data-lanimate-split')) {
+            if ($el.hasAttribute('data-lanimate-split') && $el.getAttribute('data-lanimate-split') !== 'none') {
                 $el.setAttribute('data-aria-label', $el.innerText.replace(/(?:\r\n|\r|\n)/g, ' '));
                 $el.innerHTML = $el.innerHTML.trim().replace(/ {2,}/g, '').split(' ').join('&nbsp;');
                 let shift = 0;
