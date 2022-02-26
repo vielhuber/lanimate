@@ -22,11 +22,19 @@ export default class Lanimate {
                 $el.innerHTML = $el.innerHTML.trim().replace(/ {2,}/g, '').split(' ').join('&nbsp;');
                 let shift = 0;
                 if ($el.getAttribute('data-lanimate-split') === 'char') {
+                    /* TODO: split also in words to prevent breaks! */
                     this.traverseAllTextNodes($el, $text => {
-                        return '%span%' + $text.split('').join('%/span%%span%') + '%/span%';
+                        return (
+                            '%span%' +
+                            ('%span%' + $text.split('').join('%/span%%span%') + '%/span%')
+                                .split(' ')
+                                .join('%/span% %span%') +
+                            '%/span%'
+                        );
                     });
                     $el.innerHTML = $el.innerHTML.split('%span%').join('<span>').split('%/span%').join('</span>');
                     shift = 50;
+                    return;
                 }
                 if ($el.getAttribute('data-lanimate-split') === 'word') {
                     this.traverseAllTextNodes($el, $text => {
@@ -34,10 +42,6 @@ export default class Lanimate {
                     });
                     $el.innerHTML = $el.innerHTML.split('%span%').join('<span>').split('%/span%').join('</span>');
                     shift = 75;
-                }
-                if ($el.getAttribute('data-lanimate-split') === 'line') {
-                    $el.innerHTML = '<span>' + $el.innerHTML.split('<br>').join('</span><br/><span>') + '</span>';
-                    shift = 100;
                 }
                 if ($el.hasAttribute('data-lanimate-speed')) {
                     shift = (shift * parseInt($el.getAttribute('data-lanimate-speed'))) / 100;

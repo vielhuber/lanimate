@@ -32,7 +32,7 @@ lanimate.init();
     data-lanimate="fade|scrollX|scrollY|scale|rotate"
     data-lanimate-speed="3000"
     data-lanimate-delay="1500"
-    data-lanimate-split="none|char|word|line"
+    data-lanimate-split="none|char|word"
 >
     Title
 </h2>
