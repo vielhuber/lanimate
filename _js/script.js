@@ -59,7 +59,7 @@ export default class Lanimate {
                         .join('<span data-word>')
                         .split('%/span%')
                         .join('</span>');
-                    shift = 75;
+                    shift = 250;
                 }
                 if ($el.hasAttribute('data-lanimate-speed')) {
                     shift = (shift * parseInt($el.getAttribute('data-lanimate-speed'))) / 100;
@@ -132,9 +132,6 @@ export default class Lanimate {
                 `
             <style class="lanimate-styles-basic">
                 [data-lanimate] {
-                    overflow:hidden;
-                }
-                [data-lanimate] {
                     opacity: 0;
                 }
             </style>
@@ -154,10 +151,10 @@ export default class Lanimate {
                     transform: translateX(50px);
                 }
                 [data-lanimate='scrollY'] {
-                    transform: translateY(100%);
+                    transform: translateY(50%);
                 }
                 [data-lanimate='scale'] {
-                    transform: scale(1.1) translateY(100%);
+                    transform: scale(1.1) translateY(50%);
                 }
                 [data-lanimate='rotate'] {
                     transform: rotate(15deg) translateY(50%);
