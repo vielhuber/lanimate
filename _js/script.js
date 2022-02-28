@@ -1,6 +1,9 @@
 import hlp from 'hlp';
 export default class Lanimate {
     init() {
+        if (hlp.isMobile()) {
+            return;
+        }
         hlp.ready().then(() => {
             this.ready();
         });
@@ -22,25 +25,40 @@ export default class Lanimate {
                 $el.innerHTML = $el.innerHTML.trim().replace(/ {2,}/g, '').split(' ').join('&nbsp;');
                 let shift = 0;
                 if ($el.getAttribute('data-lanimate-split') === 'char') {
-                    /* TODO: split also in words to prevent breaks! */
                     this.traverseAllTextNodes($el, $text => {
                         return (
-                            '%span%' +
-                            ('%span%' + $text.split('').join('%/span%%span%') + '%/span%')
+                            '%span data-word data-word-nowrap%' +
+                            $text
                                 .split(' ')
-                                .join('%/span% %span%') +
+                                .map($text__value => {
+                                    return (
+                                        '%span data-char%' +
+                                        $text__value.split('').join('%/span%%span data-char%') +
+                                        '%/span%'
+                                    );
+                                })
+                                .join('%/span% %span data-word data-word-nowrap%') +
                             '%/span%'
                         );
                     });
-                    $el.innerHTML = $el.innerHTML.split('%span%').join('<span>').split('%/span%').join('</span>');
+                    $el.innerHTML = $el.innerHTML
+                        .split('%span data-word data-word-nowrap%')
+                        .join('<span data-word data-word-nowrap>')
+                        .split('%span data-char%')
+                        .join('<span data-char>')
+                        .split('%/span%')
+                        .join('</span>');
                     shift = 50;
-                    return;
                 }
                 if ($el.getAttribute('data-lanimate-split') === 'word') {
                     this.traverseAllTextNodes($el, $text => {
-                        return '%span%' + $text.split(' ').join('%/span% %span%') + '%/span%';
+                        return '%span data-word%' + $text.split(' ').join('%/span% %span data-word%') + '%/span%';
                     });
-                    $el.innerHTML = $el.innerHTML.split('%span%').join('<span>').split('%/span%').join('</span>');
+                    $el.innerHTML = $el.innerHTML
+                        .split('%span data-word%')
+                        .join('<span data-word>')
+                        .split('%/span%')
+                        .join('</span>');
                     shift = 75;
                 }
                 if ($el.hasAttribute('data-lanimate-speed')) {
@@ -49,6 +67,9 @@ export default class Lanimate {
                 let index = 0;
                 $el.querySelectorAll('span').forEach($el2 => {
                     if ($el2.innerText.trim() == '') {
+                        return;
+                    }
+                    if ($el2.querySelector('[data-char]') !== null) {
                         return;
                     }
                     let delay = 0;
@@ -117,25 +138,6 @@ export default class Lanimate {
                 [data-lanimate] [data-lanimate-inner] {
                     opacity: 0;
                 }
-                /* disable on mobile */
-                @media screen and (max-width: 1100px) {
-                    [data-lanimate] [data-lanimate-inner] {
-                        transition: all 0s ease 0s !important;
-                        opacity: 1 !important;
-                    }
-                    [data-lanimate='scrollX'] [data-lanimate-inner] {
-                        transform: translateX(0px) !important;
-                    }
-                    [data-lanimate='scrollY'] [data-lanimate-inner] {
-                        transform: translateY(0px) !important;
-                    }
-                    [data-lanimate='scale'] [data-lanimate-inner] {
-                        transform: scale(1) translateY(0px) !important;
-                    }
-                    [data-lanimate='rotate'] [data-lanimate-inner] {
-                        transform: rotate(0deg) translateY(0px) !important;
-                    }
-                }
             </style>
             `
             );
@@ -171,6 +173,9 @@ export default class Lanimate {
                 }
                 [data-lanimate-split] [data-lanimate] {
                     display:inline-block;
+                }
+                [data-lanimate-split] [data-word-nowrap] {
+                    white-space:nowrap;
                 }
                 [data-lanimate='fade'][data-lanimate-started] [data-lanimate-inner] {
                 }
