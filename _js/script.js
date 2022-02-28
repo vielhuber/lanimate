@@ -62,7 +62,7 @@ export default class Lanimate {
                     shift = 250;
                 }
                 if ($el.hasAttribute('data-lanimate-speed')) {
-                    shift = (shift * parseInt($el.getAttribute('data-lanimate-speed'))) / 100;
+                    shift = (shift * parseInt($el.getAttribute('data-lanimate-speed'))) / 1000;
                 }
                 let index = 0;
                 $el.querySelectorAll('span').forEach($el2 => {
@@ -151,13 +151,13 @@ export default class Lanimate {
                     transform: translateX(50px);
                 }
                 [data-lanimate='scrollY'] {
-                    transform: translateY(50%);
+                    transform: translateY(50px);
                 }
                 [data-lanimate='scale'] {
-                    transform: scale(1.1) translateY(50%);
+                    transform: scale(1.1) translateY(50px);
                 }
                 [data-lanimate='rotate'] {
-                    transform: rotate(15deg) translateY(50%);
+                    transform: rotate(15deg) translateY(50px);
                     transform-origin: 0 0;
                 }
                 [data-lanimate-started] {
