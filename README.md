@@ -29,7 +29,7 @@ lanimate.init();
 
 ```html
 <h2
-    data-lanimate="fade|scrollX|scrollY|scale|rotate"
+    data-lanimate="fade|scrollX|scrollY|scale|rotate|rotate3d|skew"
     data-lanimate-speed="3000"
     data-lanimate-delay="1500"
     data-lanimate-split="none|char|word"

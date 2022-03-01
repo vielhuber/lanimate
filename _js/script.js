@@ -164,6 +164,9 @@ export default class Lanimate {
                     transform: rotateX(80deg) rotateY(45deg);
                     transform-style: preserve-3d;
                 }
+                [data-lanimate='skew'] {
+                    transform: skew(70deg, 10deg);
+                }
                 [data-lanimate-started] {
                     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
                     opacity: 1;
@@ -190,6 +193,9 @@ export default class Lanimate {
                 }
                 [data-lanimate='rotate3d'][data-lanimate-started] {
                     transform: rotateX(0deg) rotateY(0deg);
+                }
+                [data-lanimate='skew'][data-lanimate-started] {
+                    transform: skew(0deg, 0deg);
                 }
             </style>
             `
