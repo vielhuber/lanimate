@@ -160,6 +160,10 @@ export default class Lanimate {
                     transform: rotate(15deg) translateY(50px);
                     transform-origin: 0 0;
                 }
+                [data-lanimate='rotate3d'] {
+                    transform: rotateX(80deg) rotateY(45deg);
+                    transform-style: preserve-3d;
+                }
                 [data-lanimate-started] {
                     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
                     opacity: 1;
@@ -183,6 +187,9 @@ export default class Lanimate {
                 }
                 [data-lanimate='rotate'][data-lanimate-started] {
                     transform: rotate(0deg) translateY(0px);
+                }
+                [data-lanimate='rotate3d'][data-lanimate-started] {
+                    transform: rotateX(0deg) rotateY(0deg);
                 }
             </style>
             `
