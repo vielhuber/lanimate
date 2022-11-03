@@ -106,7 +106,7 @@ export default class Lanimate {
         // fallback for edge cases (animated elements etc.)
         setInterval(() => {
             this.start($el);
-        }, 1000);
+        }, 500);
     }
     start($el) {
         if ($el.lanimateIsStarted !== true && this.scrollTop() + window.innerHeight >= this.offsetTop($el)) {
