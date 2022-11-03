@@ -103,12 +103,14 @@ export default class Lanimate {
         window.addEventListener('scroll', () => {
             this.start($el);
         });
+        // fallback for edge cases (animated elements etc.)
+        setInterval(() => {
+            this.start($el);
+        }, 1000);
     }
     start($el) {
-        if (
-            !$el.hasAttribute('data-lanimate-started') &&
-            this.scrollTop() + window.innerHeight >= this.offsetTop($el)
-        ) {
+        if ($el.lanimateIsStarted !== true && this.scrollTop() + window.innerHeight >= this.offsetTop($el)) {
+            $el.lanimateIsStarted = true;
             let delay = 0;
             if ($el.hasAttribute('data-lanimate-delay')) {
                 delay = parseInt($el.getAttribute('data-lanimate-delay'));
