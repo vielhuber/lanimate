@@ -37,3 +37,11 @@ lanimate.init();
     Title
 </h2>
 ```
+
+if you want to prevent fouc, add this css:
+
+```css
+[data-lanimate] {
+    opacity: 0;
+}
+```
