@@ -1,7 +1,15 @@
 import hlp from 'hlp';
 export default class Lanimate {
     init() {
+        document.head.insertAdjacentHTML(
+            'beforeend',
+            '<style class="lanimate-styles-restore">[data-lanimate] { opacity: 0; }</style>'
+        );
         if (hlp.isMobile()) {
+            document.head.insertAdjacentHTML(
+                'beforeend',
+                '<style class="lanimate-styles-restore">[data-lanimate] { opacity: 1; }</style>'
+            );
             return;
         }
         hlp.ready().then(() => {
