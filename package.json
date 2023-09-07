@@ -1,6 +1,6 @@
 {
     "name": "lanimate",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "main": "_build/script.js",
     "files": [
         "_build/*.js",
@@ -21,24 +21,25 @@
         "prod": "npm-run-all --parallel js"
     },
     "dependencies": {
-        "@babel/runtime": "^7.16.7",
-        "hlp": "^3.2.1",
+        "@babel/runtime": "^7.22.15",
+        "hlp": "^3.3.3",
         "mdn-polyfills": "^5.20.0",
         "onchange": "^7.1.0"
     },
     "devDependencies": {
-        "@babel/cli": "^7.16.8",
-        "@babel/core": "^7.16.12",
+        "@babel/cli": "^7.22.15",
+        "@babel/core": "^7.22.15",
         "@babel/plugin-proposal-class-properties": "^7.16.7",
         "@babel/plugin-proposal-optional-chaining": "^7.16.7",
-        "@babel/plugin-transform-runtime": "^7.16.10",
+        "@babel/plugin-proposal-private-methods": "^7.18.6",
+        "@babel/plugin-transform-runtime": "^7.22.15",
         "@babel/polyfill": "^7.11.5",
-        "@babel/preset-env": "^7.16.11",
-        "auto-changelog": "^2.3.0",
+        "@babel/preset-env": "^7.22.15",
+        "auto-changelog": "^2.4.0",
         "babelify": "^10.0.0",
         "browserify": "^17.0.0",
         "npm-run-all": "^4.1.5",
-        "terser": "^5.10.0"
+        "terser": "^5.19.4"
     },
     "browserslist": [
         "ie >= 11",

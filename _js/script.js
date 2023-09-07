@@ -204,6 +204,9 @@ export default class Lanimate {
                 [data-lanimate='skew'][data-lanimate-started] {
                     transform: skew(0deg, 0deg);
                 }
+                @media print {
+                    [data-lanimate] { opacity: 1 !important; }
+                }  
             </style>
             `
             );
