@@ -206,6 +206,12 @@ export default class Lanimate {
                 }
                 @media print {
                     [data-lanimate] { opacity: 1 !important; }
+                    [data-lanimate='scrollX'],
+                    [data-lanimate='scrollY'],
+                    [data-lanimate='scale'],
+                    [data-lanimate='rotate'],
+                    [data-lanimate='rotate3d'],
+                    [data-lanimate='skew'] { transform: none !important; }
                 }  
             </style>
             `
