@@ -1,6 +1,6 @@
 {
     "name": "lanimate",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "main": "_build/script.js",
     "files": [
         "_build/*.js",
@@ -21,25 +21,25 @@
         "prod": "npm-run-all --parallel js"
     },
     "dependencies": {
-        "@babel/runtime": "^7.22.15",
-        "hlp": "^3.3.3",
+        "@babel/runtime": "^7.28.4",
+        "hlp": "^3.6.5",
         "mdn-polyfills": "^5.20.0",
         "onchange": "^7.1.0"
     },
     "devDependencies": {
-        "@babel/cli": "^7.22.15",
-        "@babel/core": "^7.22.15",
-        "@babel/plugin-proposal-class-properties": "^7.16.7",
-        "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.5",
+        "@babel/plugin-proposal-class-properties": "^7.18.6",
+        "@babel/plugin-proposal-optional-chaining": "^7.21.0",
         "@babel/plugin-proposal-private-methods": "^7.18.6",
-        "@babel/plugin-transform-runtime": "^7.22.15",
-        "@babel/polyfill": "^7.11.5",
-        "@babel/preset-env": "^7.22.15",
-        "auto-changelog": "^2.4.0",
+        "@babel/plugin-transform-runtime": "^7.28.5",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.28.5",
+        "auto-changelog": "^2.5.0",
         "babelify": "^10.0.0",
-        "browserify": "^17.0.0",
+        "browserify": "^17.0.1",
         "npm-run-all": "^4.1.5",
-        "terser": "^5.19.4"
+        "terser": "^5.44.1"
     },
     "browserslist": [
         "ie >= 11",
