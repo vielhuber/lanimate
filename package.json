@@ -1,6 +1,6 @@
 {
     "name": "lanimate",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "main": "_build/script.js",
     "files": [
         "_build/*.js",
@@ -11,11 +11,11 @@
     "license": "MIT",
     "description": "",
     "scripts": {
-        "js:browserify": "browserify ./_js/script.js --outfile ./lanimate.min.js --debug --transform babelify",
+        "js:vite": "vite build --logLevel error",
         "js:minify": "terser --compress --mangle --output ./lanimate.min.js ./lanimate.min.js",
         "js:babel": "npx babel ./_js/ --out-dir ./_build/",
-        "js": "npm-run-all --sequential js:browserify js:minify js:babel",
-        "js:dev": "npm-run-all --sequential js:browserify js:babel",
+        "js": "npm-run-all --sequential js:vite js:minify js:babel",
+        "js:dev": "npm-run-all --sequential js:vite js:babel",
         "watch:js": "onchange ./_js/*.js --initial --poll 50 --delay 0 --await-write-finish 50 -- npm run js:dev",
         "dev": "npm-run-all --parallel watch:*",
         "prod": "npm-run-all --parallel js"
@@ -37,9 +37,9 @@
         "@babel/preset-env": "^7.28.5",
         "auto-changelog": "^2.5.0",
         "babelify": "^10.0.0",
-        "browserify": "^17.0.1",
         "npm-run-all": "^4.1.5",
-        "terser": "^5.44.1"
+        "terser": "^5.44.1",
+        "vite": "^7.3.1"
     },
     "browserslist": [
         "ie >= 11",
