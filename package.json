@@ -1,12 +1,15 @@
 {
     "name": "lanimate",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "main": "_build/script.js",
     "files": [
         "_build/*.js",
         "lanimate.min.js"
     ],
-    "repository": "git@github.com:vielhuber/lanimate.git",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/vielhuber/lanimate.git"
+    },
     "author": "David Vielhuber <david@vielhuber.de>",
     "license": "MIT",
     "description": "",
