@@ -1,6 +1,6 @@
 {
     "name": "lanimate",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "main": "_build/script.js",
     "files": [
         "_build/*.js",
@@ -48,5 +48,8 @@
         "ie >= 11",
         "> 0.25%",
         "not dead"
-    ]
+    ],
+    "engines": {
+        "node": ">=18"
+    }
 }

@@ -1,3 +1,10 @@
+[![GitHub Tag](https://img.shields.io/github/v/tag/vielhuber/lanimate)](https://github.com/vielhuber/lanimate/tags)
+[![Code Style](https://img.shields.io/badge/code_style-psr--12-ff69b4.svg)](https://www.php-fig.org/psr/psr-12/)
+[![License](https://img.shields.io/github/license/vielhuber/lanimate)](https://github.com/vielhuber/lanimate/blob/main/LICENSE.md)
+[![Last Commit](https://img.shields.io/github/last-commit/vielhuber/lanimate)](https://github.com/vielhuber/lanimate/commits)
+[![node version](https://img.shields.io/node/v/lanimate)](https://www.npmjs.com/package/lanimate)
+[![npm Downloads](https://img.shields.io/npm/dt/lanimate)](https://www.npmjs.com/package/lanimate)
+
 # 🥤 lanimate 🥤
 
 lanimate is a small library that animates appearing dom elements.
