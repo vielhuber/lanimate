@@ -231,4 +231,6 @@ export default class Lanimate {
     }
 }
 
-window.Lanimate = Lanimate;
+if (typeof window !== 'undefined') {
+    window.Lanimate = Lanimate;
+}
