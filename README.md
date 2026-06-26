@@ -30,7 +30,9 @@ or as a ready-to-go bundle:
 ## usage
 
 ```js
-const lanimate = new Lanimate();
+let lanimate = new Lanimate({
+    mobile: false // true for enabling on mobile
+});
 lanimate.init();
 ```
 

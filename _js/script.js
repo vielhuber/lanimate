@@ -1,7 +1,13 @@
 import hlp from 'hlp';
 export default class Lanimate {
+    constructor(options = {}) {
+        this.options = {
+            mobile: false,
+            ...options
+        };
+    }
     init() {
-        if (hlp.isMobile()) {
+        if (hlp.isMobile() && this.options.mobile !== true) {
             // restore fouc prevention
             document.head.insertAdjacentHTML(
                 'beforeend',
