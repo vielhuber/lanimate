@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/github/license/vielhuber/lanimate)](https://github.com/vielhuber/lanimate/blob/main/LICENSE.md)
 [![Last Commit](https://img.shields.io/github/last-commit/vielhuber/lanimate)](https://github.com/vielhuber/lanimate/commits)
 [![node version](https://img.shields.io/node/v/lanimate)](https://www.npmjs.com/package/lanimate)
+[![npm Version](https://img.shields.io/npm/v/lanimate)](https://www.npmjs.com/package/lanimate)
 [![npm Downloads](https://img.shields.io/npm/dt/lanimate)](https://www.npmjs.com/package/lanimate)
 
 # 🥤 lanimate 🥤
